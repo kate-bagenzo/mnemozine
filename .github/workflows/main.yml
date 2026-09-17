@@ -32,7 +32,7 @@ jobs:
           VERSION: 1.0.0
 
           # By default, the author will be your name on GitHub. You can manually change this.
-          AUTHOR: Kate Bagenzo
+          AUTHOR: kate-bagenzo
 
           # If this to 'true', a copy of your game will also be hosted on the web at https://USERNAME.github.io/REPO_NAME
           # Delete or comment out this line to disable that
