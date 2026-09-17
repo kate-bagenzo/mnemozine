@@ -1,0 +1,122 @@
+
+@font-face {
+    font-family: 'thisfont';
+    src: url('/fonts/thisfont.ttf');
+}
+@font-face {
+    font-family: 'fancy';
+    src: url('/fonts/fancy.ttf');
+}
+@font-face {
+    font-family: 'eater';
+    src: url('/fonts/eater.ttf');
+}
+@font-face {
+    font-family: 'm3x6';
+    src: url('/fonts/m3x6.ttf)');
+}
+@font-face {
+    font-family: 'dm mono';
+    src: url('/fonts/dmmono.ttf)');
+}
+@font-face {
+    font-family: 'm5x7';
+    src: url('/fonts/m5x7.ttf');
+}
+@font-face {
+    font-family: 'nunito';
+    src: url('/fonts/nunito.ttf');
+}
+@font-face {
+    font-family: 'crimson';
+    src: url('/fonts/crimson.ttf');
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+@keyframes slidedown {
+    from {
+        transform: translateY((-100%));
+    }
+    to {
+        transform: translateY((0%));
+    }
+}
+
+@keyframes slidedownDouble {
+    from {
+        transform: translateY((-200%));
+    }
+    to {
+        transform: translateY((0%));
+    }
+}
+
+@keyframes slideup {
+    from {
+        transform: translateY((100%));
+    }
+    to {
+        transform: translateY((0%));
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 20px;
+}
+
+html,
+button:disabled {
+    cursor: url('/images/cursor/default.webp'), default !important;
+}
+input, button, a {
+    cursor: url('/images/cursor/pointer.webp'), pointer !important;
+}
+
+ul, ol {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comark-content {
+    padding: 0.5rem;
+}
+
+$main-bg: #deeed6;
+$secondary-bg: #8595a1;
+
+$main-fg: #000000;
+$secondary-fg: #30346d;
+$tertiary-fg: #597dce;
+
+$main-border: #757161;
+$highlight-border: #dad45e;
+
+$black: #140c1c;
+$purple: #442434;
+$darkblue: #30346d;
+$darkgray: #4e4a4e;
+$brown: #854c30;
+$darkgreen: #346524;
+$red: #d04648;
+$gray: #757161;
+$blue: #597dce;
+$orange: #d27d2c;
+$lightgray: #8595a1;
+$green: #6daa2c;
+$pink: #d2aa99;
+$lightblue: #6dc2ca;
+$yellow: #dad45e;
+$white: #deeed6;
