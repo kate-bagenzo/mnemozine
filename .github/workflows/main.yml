@@ -47,7 +47,7 @@ jobs:
       - name: Install Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20.18.1
+          node-version: 24.7.0
 
       - name: Test for presence of Windows codesigning secrets
         id: vars
