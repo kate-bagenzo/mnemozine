@@ -6,8 +6,7 @@ permissions:
 on:
   push:
     branches:
-      - main
-      - release
+      - out
 
 defaults:
   run:
