@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
 import { progress } from '../../../state/progress';
 
 
@@ -37,6 +38,8 @@ if (!progress.unlockedPages.includes('jay')) {
         </header>
         <section>
             <p>somewhat embarrassingly, i don't actually have much on here yet!</p>
+            <p>i've deleted my old blog - don't worry, old links to individual articles will still work for a time - but this page is a bit sparse.</p>
+            <p>catch up with me on <RouterLink to="/dorset/forum/main">the board</RouterLink> if you want to chat!</p>
         </section>
     </section>
 
@@ -54,6 +57,17 @@ if (!progress.unlockedPages.includes('jay')) {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    section {
+        background-color: $darkblue;
+        border: 2px solid $white;
+        font-size: 32px;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        a {
+            background-color: $white;
+            color: $darkblue;
+        }
+    }
     pre {
         font-family: monospace;
         font-size: 8px;

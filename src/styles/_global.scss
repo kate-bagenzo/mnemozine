@@ -31,6 +31,18 @@
     font-family: 'crimson';
     src: url('/fonts/crimson.ttf');
 }
+@font-face {
+    font-family: 'vga';
+    src: url('/fonts/vga.woff');
+}
+@font-face {
+    font-family: 'charon mono';
+    src: url('/fonts/charon.ttf');
+}
+@font-face {
+    font-family: 'barcode';
+    src: url('/fonts/barcode.ttf');
+}
 
 @keyframes fadein {
     from {
@@ -94,29 +106,57 @@ ul, ol {
     padding: 0.5rem;
 }
 
-$main-bg: #deeed6;
-$secondary-bg: #8595a1;
+$black: var(--black);
+$purple: var(--purple);
+$darkblue: var(--darkblue);
+$darkgray: var(--darkgray);
+$brown: var(--brown);
+$darkgreen: var(--darkgreen);
+$red: var(--red);
+$gray: var(--gray);
+$blue: var(--blue);
+$orange: var(--orange);
+$lightgray: var(--lightgray);
+$green: var(--green);
+$pink: var(--pink);
+$lightblue: var(--lightblue);
+$yellow: var(--yellow);
+$white: var(--white);
 
-$main-fg: #000000;
-$secondary-fg: #30346d;
-$tertiary-fg: #597dce;
+.theme-16 {
+--black: #140c1c;
+--purple: #442434;
+--darkblue: #30346d;
+--darkgray: #4e4a4e;
+--brown: #854c30;
+--darkgreen: #346524;
+--red: #d04648;
+--gray: #757161;
+--blue: #597dce;
+--orange: #d27d2c;
+--lightgray: #8595a1;
+--green: #6daa2c;
+--pink: #d2aa99;
+--lightblue: #6dc2ca;
+--yellow: #dad45e;
+--white: #deeed6;
+}
 
-$main-border: #757161;
-$highlight-border: #dad45e;
-
-$black: #140c1c;
-$purple: #442434;
-$darkblue: #30346d;
-$darkgray: #4e4a4e;
-$brown: #854c30;
-$darkgreen: #346524;
-$red: #d04648;
-$gray: #757161;
-$blue: #597dce;
-$orange: #d27d2c;
-$lightgray: #8595a1;
-$green: #6daa2c;
-$pink: #d2aa99;
-$lightblue: #6dc2ca;
-$yellow: #dad45e;
-$white: #deeed6;
+.theme-8 {
+--black: #381631;
+--purple:#381631;
+--darkblue: #105390;
+--darkgray: #381631;
+--brown: #e26159;
+--darkgreen: #1b958d;
+--red: #e21c61; 
+--gray: #381631;
+--blue: #105390;
+--orange: #e26159;
+--lightgray: #d8dcb4;
+--green: #1b958d;
+--pink: #e21c61;
+--lightblue: #5eb6ad;
+--yellow: #fea85f;
+--white: #d8dcb4;
+}

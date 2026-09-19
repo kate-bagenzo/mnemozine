@@ -52,6 +52,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/dorset/forum/main': RouteRecordInfo<
+      '/dorset/forum/main',
+      '/dorset/forum/main',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/dorset/profiles/jay': RouteRecordInfo<
       '/dorset/profiles/jay',
       '/dorset/profiles/jay',
@@ -62,6 +69,20 @@ declare module 'vue-router/auto-routes' {
     '/dorset/TimeCapsule': RouteRecordInfo<
       '/dorset/TimeCapsule',
       '/dorset/TimeCapsule',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/intrazone/main': RouteRecordInfo<
+      '/intrazone/main',
+      '/intrazone/main',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/myself/chest': RouteRecordInfo<
+      '/myself/chest',
+      '/myself/chest',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -103,6 +124,14 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
+    'src/pages/dorset/forum/main.vue': {
+      routes:
+        | '/dorset/forum/main'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
     'src/pages/dorset/profiles/jay.vue': {
       routes:
         | '/dorset/profiles/jay'
@@ -114,6 +143,22 @@ declare module 'vue-router/auto-routes' {
     'src/pages/dorset/TimeCapsule.vue': {
       routes:
         | '/dorset/TimeCapsule'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/intrazone/main.vue': {
+      routes:
+        | '/intrazone/main'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/myself/chest.vue': {
+      routes:
+        | '/myself/chest'
       views:
         | never
       pathParamNames:

@@ -43,20 +43,20 @@ body {
 
 .titlebar {
   height: 30px;
-  background: linear-gradient(0.25turn, $secondary-fg, $tertiary-fg);
-  color: $main-bg;
+  background: linear-gradient(0.25turn, $darkblue, $blue);
+  color: $white;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   padding-left: 5px;
   font-family: 'm3x6';
   app-region: drag;
-  border-bottom: 1px inset $main-border;
+  border-bottom: 1px inset $gray;
   font-size: 48px;
   vertical-align: top;
   padding-bottom: 0.5rem;
+  gap: 0.5rem;
   img {
-    margin-right: 0.5rem;
     margin-top: 7px;
   }
 }
@@ -71,12 +71,12 @@ body {
     padding-left: 0.5rem;
     animation: slideup 3s;
     transform: translateY(100%);
-    animation-delay: 20s;
+    animation-delay: 0s;
     animation-fill-mode: forwards;
 }
 
 #main-nav {
-    background-color: $secondary-bg;
+    background-color: $lightgray;
     height: 2.5rem;
     font-family: 'm3x6';
     font-size: 32px;
@@ -84,7 +84,7 @@ body {
     align-items: center;
     animation: slidedownDouble 5s;
     transform: translateY(-200%);
-    animation-delay: 20s;
+    animation-delay: 0s;
     animation-fill-mode: forwards;
     z-index: 0;
     ol {
@@ -133,6 +133,7 @@ button {
 #main-view {
   width: 100%;
   height: 100%;
+  scrollbar-color: $darkblue $lightblue;
 }
 
 #contract-bar {
@@ -143,14 +144,14 @@ button {
 }
 
 #lucarne-bar {
-  animation: slidedown 10s;
+  animation: slidedown 0s;
   z-index: 100;
   font-family: 'm3x6';
   font-size: 48px;
   vertical-align: top;
   padding-bottom: 0.5rem;
+  gap: 0.5rem;
   img {
-    margin-right: 0.5rem;
     margin-top: 7px;
   }
 }
@@ -266,4 +267,8 @@ button {
       }
     }
   }
+}
+
+.center {
+  text-align: center;
 }
