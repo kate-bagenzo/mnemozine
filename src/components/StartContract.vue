@@ -79,7 +79,7 @@ function confirmContract() {
       <aside class='confirmation' v-if="checkedBoxes.length >= 14 || true">
           <hr>
           <h2>5. Confirmation</h2>
-          <p><strong>In exchange for my VOICE, and the agreement of the above terms, I, </strong><input spellcheck="false" v-model="yourName" type="text" placeholder="your name"><strong>, under the protection of Beelzebub, will enter the world.</strong></p>
+          <p><strong>In exchange for my VOICE, and the agreement of the above terms, I, </strong><input spellcheck="false" v-model="yourName" type="text" placeholder="your name"><strong>, will enter the world.</strong></p>
           <button v-if="yourName.length > 0" @click="confirmContract">confirm</button>
       </aside>
     </form>

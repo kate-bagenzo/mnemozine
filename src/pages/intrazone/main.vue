@@ -28,9 +28,18 @@ function submitClick(event: any) {
             </form>
         </section>
         <section class="results" v-if="search != ''">
-            <h2>results for query "{{ search }}"</h2>
+            <h2>results for query "{{ search }}":</h2>
             <main v-if="search.includes('2012')">
-                <RouterLink to="/intrazone/sites/r1d3r/2012">2012: The END of HUmanity</RouterLink>
+                <RouterLink to="/intrazone/sites/r1d3r/2012">2012: What we know</RouterLink>
+                <p>/intrazone/sites/r1d3r/2012</p>
+            </main>
+            <main v-else-if="search.includes('r1d3r') || search.includes('rider')">
+                <RouterLink to="/intrazone/sites/r1d3r/main">r1d3r's CLASSIFIED home page</RouterLink>
+                <p>/intrazone/sites/r1d3r/main</p>
+            </main>
+            <main v-else-if="search.includes('intrazone')">
+                <RouterLink to="/intrazone/sites/manifesto">INTRAZONE MANIFESTO</RouterLink>
+                <p>/intrazone/sites/manifesto</p>
             </main>
             <main v-else>
                 nothing found...
@@ -77,6 +86,12 @@ function submitClick(event: any) {
                 height: 2rem;
                 color: $darkgreen;
                 font-weight: bold;
+            }
+            main {
+                text-align: left;
+                p {
+                    font-size: 0.75rem;
+                }
             }
         }
         .results {

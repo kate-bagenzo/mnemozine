@@ -14,10 +14,11 @@ const countDown = ref(120);
         <h1>glyph</h1>
         <hr>
         <nav>
-            [<button>info/</button>]
+            [<button @click="activeBoard = 'info'" :class="{active: activeBoard == 'info'}">info/</button ><button @click="activeBoard = 'gen'" :class="{active: activeBoard == 'gen'}">gen</button>]
         </nav>
         <hr>
-        <h2>/info/ - news & updates</h2>
+        <h2 v-if="activeBoard == 'info'">/info/ - news & updates</h2>
+        <h2 v-else-if="activeBoard == 'gen'">/gen/ - general</h2>
         <ol class="posting">
             <li><label>User</label><input></li>
             <li><label>Password</label><input></li>
@@ -248,8 +249,12 @@ const countDown = ref(120);
             h4.daisy {
                 color: $yellow;
             }
+            h4.blood {
+                color: $red;
+            }
             time {
              color: $black;
+             margin-left: 0.5rem;
             }
             li {
                 line-height: 1.2rem;

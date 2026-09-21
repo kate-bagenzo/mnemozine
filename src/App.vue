@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes, handleHotUpdate } from 'vue-router/auto-routes'
+import {Howl, Howler} from 'howler';
 
 
 import { progress } from './state/progress.ts';
 import StartContract from './components/StartContract.vue';
 import { ref, watch } from 'vue';
 import { theme } from './state/theme.ts';
+
+document.addEventListener('dragover', event => event.preventDefault())
+document.addEventListener('drop', event => event.preventDefault())
 
 </script>
 
@@ -61,19 +65,18 @@ if (import.meta.hot) {
   handleHotUpdate(router) 
 }
 
-const wizardMode = ref(false);
 let xCount = 0;
 const body = document.querySelector('body');
 window.addEventListener('keydown', (e) => {
-  if (e.key == 'x' || e.key == 'X' && (e.target === body) && !wizardMode.value) {
+  if (e.key == 'x' || e.key == 'X' && (e.target === body) && !progress.wizardMode) {
     xCount++;
   } else {
     xCount = 0;
   }
   if (xCount >= 5) {
-    wizardMode.value = true;
+    progress.wizardMode = true;
     xCount = 0;
-    setTimeout(() => {wizardMode.value = false}, 5000);
+    setTimeout(() => {progress.wizardMode = false}, 5000);
   }
 });
 
@@ -82,7 +85,7 @@ window.addEventListener('keydown', (e) => {
 <template>
   <div v-if="progress.signedContract" id="lucarne-bar" class="titlebar">
     <img src="/images/cube.gif" v-if="theme.current == '16'"><img v-else src="/images/cube8.gif">lucarne browser
-    <span v-if="wizardMode">[WIZARD MODE]</span>
+    <span v-if="progress.wizardMode">[WIZARD MODE]</span>
   </div>
   <div v-else id="contract-bar" class="titlebar"></div>
   <nav v-if="progress.signedContract" id="main-nav">
@@ -94,7 +97,7 @@ window.addEventListener('keydown', (e) => {
   </nav>
   <main v-if="progress.signedContract" id="main-view">
     <Transition>
-      <aside id="wizardMode" v-if="wizardMode">
+      <aside id="wizardMode" v-if="progress.wizardMode">
         <h1>cast spell...</h1>
         <img src="/images/wizard.gif">
       </aside>
@@ -126,6 +129,7 @@ window.addEventListener('keydown', (e) => {
   }
   main:has(#wizardMode) {
     overflow: hidden;
+    scrollbar-gutter: stable;
   }
   #wizardMode {
     width: 100%;
@@ -144,6 +148,7 @@ window.addEventListener('keydown', (e) => {
       position: absolute;
       bottom: 75px;
       right: 1px;
+      filter: invert(200%);
     }
   }
 #wizardMode.v-enter-active,

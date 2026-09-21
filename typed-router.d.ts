@@ -80,9 +80,44 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/intrazone/sites/manifesto': RouteRecordInfo<
+      '/intrazone/sites/manifesto',
+      '/intrazone/sites/manifesto',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/intrazone/sites/r1d3r/2012': RouteRecordInfo<
+      '/intrazone/sites/r1d3r/2012',
+      '/intrazone/sites/r1d3r/2012',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/intrazone/sites/r1d3r/boxelf': RouteRecordInfo<
+      '/intrazone/sites/r1d3r/boxelf',
+      '/intrazone/sites/r1d3r/boxelf',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/intrazone/sites/r1d3r/main': RouteRecordInfo<
+      '/intrazone/sites/r1d3r/main',
+      '/intrazone/sites/r1d3r/main',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
     '/myself/chest': RouteRecordInfo<
       '/myself/chest',
       '/myself/chest',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
+    '/myself/demoEnd': RouteRecordInfo<
+      '/myself/demoEnd',
+      '/myself/demoEnd',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -156,9 +191,49 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
+    'src/pages/intrazone/sites/manifesto.vue': {
+      routes:
+        | '/intrazone/sites/manifesto'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/intrazone/sites/r1d3r/2012.vue': {
+      routes:
+        | '/intrazone/sites/r1d3r/2012'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/intrazone/sites/r1d3r/boxelf.vue': {
+      routes:
+        | '/intrazone/sites/r1d3r/boxelf'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/intrazone/sites/r1d3r/main.vue': {
+      routes:
+        | '/intrazone/sites/r1d3r/main'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
     'src/pages/myself/chest.vue': {
       routes:
         | '/myself/chest'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/myself/demoEnd.vue': {
+      routes:
+        | '/myself/demoEnd'
       views:
         | never
       pathParamNames:

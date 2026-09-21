@@ -23,6 +23,14 @@ body {
     border: 2px outset lightgray;
 }
 
+body:has(#wizardMode) {
+  filter: invert(100%);
+  .lock {
+    filter: invert(200%);
+    cursor: url('/images/cursor/pointer.webp'), pointer !important;
+  }
+}
+
 #app {
   display: flex;
   flex-direction: column;
@@ -66,7 +74,7 @@ body {
     font-family: 'm3x6';
     height: 26px;
     line-height: 16px;
-    border-top: 2px solid gray;
+    border-top: 2px solid $gray;
     font-size: 32px;
     padding-left: 0.5rem;
     animation: slideup 3s;
@@ -86,6 +94,7 @@ body {
     transform: translateY(-200%);
     animation-delay: 0s;
     animation-fill-mode: forwards;
+    border-bottom: 2px solid $gray;
     z-index: 0;
     ol {
         margin-left: 0.25rem;
