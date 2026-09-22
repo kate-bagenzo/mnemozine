@@ -35,7 +35,7 @@ function submitClick(event: any) {
                 <RouterLink @click="songs.playClick" to="/intrazone/sites/r1d3r/main">r1d3r's CLASSIFIED home page</RouterLink>
                 <p>/intrazone/sites/r1d3r/main</p>
             </main>
-            <main v-else-if="search.includes('intrazone') || search.includes('manifesto') || search.includes('MANIFESTO') || search.includes('intrazone')">
+            <main v-else-if="search.includes('intrazone') || search.includes('manifesto') || search.includes('MANIFESTO') || search.includes('INTRAZONE')">
                 <RouterLink @click="songs.playClick" to="/intrazone/sites/manifesto">INTRAZONE MANIFESTO</RouterLink>
                 <p>/intrazone/sites/manifesto</p>
             </main>
