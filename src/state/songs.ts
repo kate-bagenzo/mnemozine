@@ -6,23 +6,23 @@ interface HowlIndex {
 }
 
 const musics: HowlIndex = {
-    'clickSnd': new Howl({src: ['/sound/click.ogg']}),
-    'bell': new Howl({src: ['/sound/bell.wav']}),
-    'beep': new Howl({src: ['/sound/button05.mp3']}),
-    'startup': new Howl({src: ['/sound/startup.wav']}),
-    'keypress': new Howl({src: ['/sound/keypress.mp3']}),
-    'wizard': new Howl({src: ['/sound/wizard.ogg']}),
-    'breakLock': new Howl({src: ['/sound/breakLock.ogg']}),
-    'greenfog': new Howl({src: '/sound/greenfog.mp3', loop: true, volume: 0}),
-    '1500g': new Howl({src: '/sound/1500g.mp3', loop: true, volume: 0}),
-    'restore': new Howl({src: '/sound/restore.mp3', loop: true, volume: 0}),
-    'investigation': new Howl({src: '/sound/investigation.mp3', loop: true, volume: 0}),
-    'reading': new Howl({src: '/sound/reading.mp3', loop: true, volume: 0}),
+    'clickSnd': new Howl({src: ['./sound/click.ogg']}),
+    'bell': new Howl({src: ['./sound/bell.wav']}),
+    'beep': new Howl({src: ['./sound/button05.mp3']}),
+    'startup': new Howl({src: ['./sound/startup.wav']}),
+    'keypress': new Howl({src: ['./sound/keypress.mp3']}),
+    'wizard': new Howl({src: ['./sound/wizard.ogg']}),
+    'breakLock': new Howl({src: ['./sound/breakLock.ogg']}),
+    'greenfog': new Howl({src: ['./sound/greenfog.mp3'], loop: true, volume: 0}),
+    '1500g': new Howl({src: ['./sound/1500g.mp3'], loop: true, volume: 0}),
+    'restore': new Howl({src: ['./sound/restore.mp3'], loop: true, volume: 0}),
+    'investigation': new Howl({src: ['./sound/investigation.mp3'], loop: true, volume: 0}),
+    'reading': new Howl({src: ['./sound/reading.mp3'], loop: true, volume: 0}),
 
 }
 
 export const songs = reactive({
-    currentSong: musics['clickSnd'],
+    currentSong: musics['reading'],
     nextSong: musics['greenfog'],
     volume: 1,
     setVolume(newVol: any) {
@@ -49,6 +49,8 @@ export const songs = reactive({
     },
     playClick() {
         musics['clickSnd'].play();
+        console.log('click');
+        console.log(musics['clickSnd']);
     },
     playSnd(sound: any) {
         musics[sound].play();
