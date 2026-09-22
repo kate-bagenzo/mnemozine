@@ -7,8 +7,8 @@ songs.changePlaying('investigation');
 </script>
 
 <template>
-    <section class="game">
-        <iframe src="/src/assets/BoxElf.html"></iframe>
+    <section id="test1" class="game">
+        <iframe :src="'./BoxElf.html'"></iframe>
     </section>
 </template>
 

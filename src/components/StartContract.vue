@@ -24,7 +24,7 @@ songs.changePlaying('greenfog')
       <h1><em>C</em>ontract of <em>M</em>nemozine</h1>
       <h2>1. The Obligations of the Player</h2>
       <section>
-        <input @click="songs.playSnd('clickSnd')" type="checkbox" value="1" v-model="checkedBoxes">
+        <input @click="songs.playSnd('bell')" type="checkbox" value="1" v-model="checkedBoxes">
         <p>I, the Player, will enter the world of Mnemozine and take on the form of the following cursor: <img src="/images/cursor/default.webp"> </p>
       </section>
       <section>
