@@ -38,13 +38,6 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/dorset/dorset': RouteRecordInfo<
-      '/dorset/dorset',
-      '/dorset/dorset',
-      Record<never, never>,
-      Record<never, never>,
-      | never
-    >,
     '/dorset/files/help': RouteRecordInfo<
       '/dorset/files/help',
       '/dorset/files/help',
@@ -59,16 +52,16 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
-    '/dorset/profiles/jay': RouteRecordInfo<
-      '/dorset/profiles/jay',
-      '/dorset/profiles/jay',
+    '/dorset/main': RouteRecordInfo<
+      '/dorset/main',
+      '/dorset/main',
       Record<never, never>,
       Record<never, never>,
       | never
     >,
-    '/dorset/TimeCapsule': RouteRecordInfo<
-      '/dorset/TimeCapsule',
-      '/dorset/TimeCapsule',
+    '/dorset/profiles/jay': RouteRecordInfo<
+      '/dorset/profiles/jay',
+      '/dorset/profiles/jay',
       Record<never, never>,
       Record<never, never>,
       | never
@@ -122,6 +115,13 @@ declare module 'vue-router/auto-routes' {
       Record<never, never>,
       | never
     >,
+    '/myself/options': RouteRecordInfo<
+      '/myself/options',
+      '/myself/options',
+      Record<never, never>,
+      Record<never, never>,
+      | never
+    >,
   }
 
   /**
@@ -143,14 +143,6 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/dorset/dorset.vue': {
-      routes:
-        | '/dorset/dorset'
-      views:
-        | never
-      pathParamNames:
-        | never
-    }
     'src/pages/dorset/files/help.vue': {
       routes:
         | '/dorset/files/help'
@@ -167,17 +159,17 @@ declare module 'vue-router/auto-routes' {
       pathParamNames:
         | never
     }
-    'src/pages/dorset/profiles/jay.vue': {
+    'src/pages/dorset/main.vue': {
       routes:
-        | '/dorset/profiles/jay'
+        | '/dorset/main'
       views:
         | never
       pathParamNames:
         | never
     }
-    'src/pages/dorset/TimeCapsule.vue': {
+    'src/pages/dorset/profiles/jay.vue': {
       routes:
-        | '/dorset/TimeCapsule'
+        | '/dorset/profiles/jay'
       views:
         | never
       pathParamNames:
@@ -234,6 +226,14 @@ declare module 'vue-router/auto-routes' {
     'src/pages/myself/demoEnd.vue': {
       routes:
         | '/myself/demoEnd'
+      views:
+        | never
+      pathParamNames:
+        | never
+    }
+    'src/pages/myself/options.vue': {
+      routes:
+        | '/myself/options'
       views:
         | never
       pathParamNames:

@@ -177,3 +177,12 @@ $white: var(--white);
 --yellow: #fea85f;
 --white: #d8dcb4;
 }
+
+@keyframes glow {
+    from {
+        color: $red;
+    }
+    to {
+        color: $white;
+    }
+}

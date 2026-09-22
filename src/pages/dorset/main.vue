@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import ProfileLink from '../../components/ProfileLink.vue';
+import { songs } from '../../state/songs.ts';
 
 function getRandomIntInclusive(min: number, max: number) {
   const minCeiled = Math.ceil(min);
@@ -9,6 +10,8 @@ function getRandomIntInclusive(min: number, max: number) {
 }
 
 const userCount = ref(getRandomIntInclusive(3400, 4100));
+
+songs.changePlaying('1500g');
 
 setInterval(() => {
     if (getRandomIntInclusive(0,1)) {

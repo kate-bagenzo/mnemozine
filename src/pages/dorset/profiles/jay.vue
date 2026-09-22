@@ -1,16 +1,20 @@
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { progress } from '../../../state/progress';
+import { songs } from '../../../state/songs';
 
 
 if (!progress.unlockedPages.includes('jay')) {
     progress.unlockedPages.push('jay');
 }
 
+songs.changePlaying('1500g');
+
 </script>
 
 <template>
     <section class="jay">
+        <div>
         <pre>
   ░██                       ░██                                                           
                             ░██                                                           
@@ -36,11 +40,12 @@ if (!progress.unlockedPages.includes('jay')) {
                 in the 21st century, personal pages would often include a header like this, listing little facts about the user. even though you probably already know all this stuff (or could find it out easily by querying Information Control) it's fun to get it in such an analog way!
             </details>
         </header>
-        <section>
-            <p>somewhat embarrassingly, i don't actually have much on here yet!</p>
+        <section class="override">
+            <p>somewhat embarrassingly, i don't actually have much on here at the moment!</p>
             <p>i've deleted my old blog - don't worry, old links to individual articles will still work for a time - but this page is a bit sparse.</p>
-            <p>catch up with me on <RouterLink to="/dorset/forum/main">the board</RouterLink> if you want to chat!</p>
+            <p>catch up with me on <RouterLink @click="songs.playClick" to="/dorset/forum/main">the board</RouterLink> if you want to chat!</p>
         </section>
+        </div>
     </section>
 
 </template>
@@ -49,7 +54,6 @@ if (!progress.unlockedPages.includes('jay')) {
 .jay {
     width: 100%;
     height: 100%;
-    background-image: url('/images/space.gif');
     color: $white;
     font-family: 'm5x7';
     font-size: 48px;
@@ -57,6 +61,13 @@ if (!progress.unlockedPages.includes('jay')) {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    div {
+        height: 100%;
+        background-image: url('/images/space.gif');
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
     section {
         background-color: $darkblue;
         border: 2px solid $white;

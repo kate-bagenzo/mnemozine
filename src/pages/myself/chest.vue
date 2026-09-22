@@ -1,8 +1,27 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import { progress } from '../../state/progress';
+import { songs } from '../../state/songs';
 
 const pageNum = ref(0);
+
+songs.changePlaying('reading');
+
+const jaySolved = ref(false);
+
+watch(progress.jayPage, checkJaySolved);
+
+function checkJaySolved() {
+    if (
+        progress.jayPage.age.correct.includes(progress.jayPage.age.guess) &&
+        progress.jayPage.uptime.correct.includes(progress.jayPage.uptime.guess) &&
+        progress.jayPage.userName.correct.includes(progress.jayPage.userName.guess)
+    ) {
+        jaySolved.value = true;
+    }
+}
+
+checkJaySolved();
 
 </script>
 
@@ -15,15 +34,20 @@ const pageNum = ref(0);
                 <img src="/images/flowers.webp">
             </header>
             <main v-if="progress.unlockedPages.includes('jay')">
-                <h2><button><</button>Jay<button>></button></h2>
+                <h2><button><</button>Jay <span v-if="jaySolved">[SOLVED!]</span><button>></button></h2>
                 <div class="jay-card">
                     <img src="/images/compascii.webp">
-                    <div>
+                    <div v-if="jaySolved == false">
                         <p>jay@dorset</p>
-                        <p>username: <input></p>
-                        <p>age: <input></p>
-                        <p>server uptime: <input></p>
-                        <p>operating system: <input></p>
+                        <p>username: <input v-model="progress.jayPage.userName.guess"></p>
+                        <p>age: <input v-model="progress.jayPage.age.guess"></p>
+                        <p>server uptime: <input v-model="progress.jayPage.uptime.guess"></p>
+                    </div>
+                    <div v-else>
+                        <p>jay@dorset</p>
+                        <p>username: curmudgeonlycorvid</p>
+                        <p>age: 48</p>
+                        <p>server uptime: {{ progress.jayPage.uptime.guess }}</p>
                     </div>
                 </div>
             </main>
@@ -95,6 +119,8 @@ const pageNum = ref(0);
             border-radius: 1rem;
             width: 1.5rem;
             font-weight: bold;
+            opacity: 50%;
+            pointer-events: none;
         }
         h2 {
             display: flex;

@@ -79,7 +79,7 @@ body:has(#wizardMode) {
     padding-left: 0.5rem;
     animation: slideup 3s;
     transform: translateY(100%);
-    animation-delay: 0s;
+    animation-delay: 20s;
     animation-fill-mode: forwards;
 }
 
@@ -92,7 +92,7 @@ body:has(#wizardMode) {
     align-items: center;
     animation: slidedownDouble 5s;
     transform: translateY(-200%);
-    animation-delay: 0s;
+    animation-delay: 20s;
     animation-fill-mode: forwards;
     border-bottom: 2px solid $gray;
     z-index: 0;
@@ -153,7 +153,7 @@ button {
 }
 
 #lucarne-bar {
-  animation: slidedown 0s;
+  animation: slidedown 5s;
   z-index: 100;
   font-family: 'm3x6';
   font-size: 48px;

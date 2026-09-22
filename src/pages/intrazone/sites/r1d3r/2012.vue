@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { songs } from '../../../../state/songs';
+
+
+songs.changePlaying('investigation');
 
 </script>
 

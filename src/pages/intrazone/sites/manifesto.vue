@@ -2,18 +2,22 @@
 import { ref } from 'vue';
 import { router } from '../../../App.vue';
 import { progress } from '../../../state/progress.ts';
+import { songs } from '../../../state/songs.ts';
 
+songs.changePlaying('restore');
 
 const buttonLocked = ref(true);
 
 function openArchive() {
     if (!buttonLocked.value) {
+        songs.playClick();
         router.push({path: '/myself/demoEnd'});
     }
 }
 function openLock() {
     if (progress.wizardMode) {
         buttonLocked.value = false;
+        songs.playSnd('breakLock');
         progress.wizardMode = false;
     }
 }

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { songs } from '../state/songs';
 
 
 const counter = ref(0);
@@ -11,16 +12,22 @@ const winHeight = ref(window.innerHeight);
 const winWidth = ref(window.innerWidth);
 
 const router = useRouter()
+const goals = [3,4,6,9,10,15];
 
 window.addEventListener('resize', function() {
     winHeight.value = window.innerHeight;
     winWidth.value = window.innerWidth;
 }, true);
 
-setInterval(() => {
+let counterInterval = setInterval(() => {
     counter.value++;
+    if (goals.indexOf(counter.value) != -1) {
+        songs.playSnd('beep');
+    }
     if (counter.value == 19) {
-        router.replace({path: '/dorset/dorset'})
+        songs.playSnd('startup');
+        router.replace({path: '/dorset/main'})
+        clearInterval(counterInterval);
     }
 }, 1000);
 

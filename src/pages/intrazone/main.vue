@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
-import { router } from '../../App.vue';
-import { useRoute } from 'vue-router'
+import { songs } from '../../state/songs.ts';
+import { progress } from '../../state/progress.ts';
 
-const route = useRoute()
+songs.changePlaying('restore');
+
+progress.unlockedPages.push('intrazone')
 
 const search = ref('');
 
@@ -11,10 +13,6 @@ function submitClick(event: any) {
     const userSearch = event.target.elements['searching'].value;
     search.value = userSearch;
 }
-
-
-    
-
 </script>
 
 <template>
@@ -30,15 +28,15 @@ function submitClick(event: any) {
         <section class="results" v-if="search != ''">
             <h2>results for query "{{ search }}":</h2>
             <main v-if="search.includes('2012')">
-                <RouterLink to="/intrazone/sites/r1d3r/2012">2012: What we know</RouterLink>
+                <RouterLink @click="songs.playClick" to="/intrazone/sites/r1d3r/2012">2012: What we know</RouterLink>
                 <p>/intrazone/sites/r1d3r/2012</p>
             </main>
             <main v-else-if="search.includes('r1d3r') || search.includes('rider')">
-                <RouterLink to="/intrazone/sites/r1d3r/main">r1d3r's CLASSIFIED home page</RouterLink>
+                <RouterLink @click="songs.playClick" to="/intrazone/sites/r1d3r/main">r1d3r's CLASSIFIED home page</RouterLink>
                 <p>/intrazone/sites/r1d3r/main</p>
             </main>
-            <main v-else-if="search.includes('intrazone')">
-                <RouterLink to="/intrazone/sites/manifesto">INTRAZONE MANIFESTO</RouterLink>
+            <main v-else-if="search.includes('intrazone') || search.includes('manifesto')">
+                <RouterLink @click="songs.playClick" to="/intrazone/sites/manifesto">INTRAZONE MANIFESTO</RouterLink>
                 <p>/intrazone/sites/manifesto</p>
             </main>
             <main v-else>

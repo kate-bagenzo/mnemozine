@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { songs } from '../../../../state/songs';
 
+songs.changePlaying('investigation');
 </script>
 
 <template>
@@ -14,8 +16,8 @@
         <hr>
         <section>
             <p>i used to make games.</p>
-            <p>those are gone too. not for my safety, but just because none of them were really good.</p>
-            <p>but due to popular demand, you can still play <RouterLink to="/intrazone/sites/r1d3r/BoxElf">BOXELF</RouterLink>.</p>
+            <p>those are gone too. not for my safety, but just because none of them were any good.</p>
+            <p>but due to popular demand, you can still play <RouterLink @click="songs.playClick" to="/intrazone/sites/r1d3r/BoxElf">BOXELF</RouterLink>.</p>
         </section>
     </section>
 </template>

@@ -6,5 +6,5 @@ export const progress = reactive({
     contractHolder: 'ERROR',
     unlockedPages: ['help'],
     wizardMode: false,
-    jayPage: {age: {guess: 0, correct: [48]}, uptime: {guess: 0, correct: ['1 year', 'one year', 'a year']}, operatingSystem: {guess: 0, correct: []}}
+    jayPage: {age: {guess: '', correct: ['48']}, uptime: {guess: '', correct: ['1 year', 'one year', 'a year']}, userName: {guess: '', correct: ['curmudgeonlycorvid']}}
 });

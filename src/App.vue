@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes, handleHotUpdate } from 'vue-router/auto-routes'
-import {Howl, Howler} from 'howler';
+import {Howl} from 'howler';
 
 
 import { progress } from './state/progress.ts';
 import StartContract from './components/StartContract.vue';
 import { ref, watch } from 'vue';
 import { theme } from './state/theme.ts';
+import { songs } from './state/songs.ts';
 
 document.addEventListener('dragover', event => event.preventDefault())
 document.addEventListener('drop', event => event.preventDefault())
@@ -36,7 +37,8 @@ export const router = createRouter({
 
 const routerPath = ref(router.currentRoute.value.name);
 
-router.afterEach((to, from) => {
+
+router.afterEach((to) => {
   if (to.fullPath.includes('intrazone')) {
     theme.current = '8';
   } else {
@@ -46,19 +48,29 @@ router.afterEach((to, from) => {
 });
 
 function goHome() {
-  router.push({path: '/dorset/dorset'});
+  router.push({path: '/dorset/main'});
+  songs.playClick();
 }
 
 function goChest() {
   router.push({path: '/myself/chest'});
+  songs.playClick();
+}
+
+function goOptions() {
+  router.push({path: '/myself/options'});
+  songs.playClick();
 }
 
 function goBack() {
+  console.log(routerPath);
   router.go(-1);
+  songs.playClick();
 }
 
 function goForward() {
   router.go(1);
+  songs.playClick();
 }
 
 if (import.meta.hot) { 
@@ -75,6 +87,7 @@ window.addEventListener('keydown', (e) => {
   }
   if (xCount >= 5) {
     progress.wizardMode = true;
+    songs.playSnd('wizard');
     xCount = 0;
     setTimeout(() => {progress.wizardMode = false}, 5000);
   }
@@ -93,6 +106,7 @@ window.addEventListener('keydown', (e) => {
       <li class="history"><button @click="goBack" class="backbutton"><p><</p></button><button @click="goForward" class="forwardbutton"><p>></p></button></li>
       <li><button @click="goHome"><img src="/images/house.gif" v-if="theme.current == '16'"><img v-else src="/images/house8.gif">Home</button></li>
       <li><button @click="goChest"><img src="/images/book.gif" v-if="theme.current == '16'"><img v-else src="/images/book8.gif">Hope Chest</button></li>
+      <li><button @click="goOptions"><img src="/images/gear.gif" v-if="theme.current == '16'"><img v-else src="/images/gear8.gif">Options</button></li>
     </ol>
   </nav>
   <main v-if="progress.signedContract" id="main-view">

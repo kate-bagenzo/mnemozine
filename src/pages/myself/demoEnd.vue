@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { songs } from '../../state/songs';
+
+
+songs.changePlaying('reading');
 
 </script>
 
@@ -13,6 +17,10 @@
             <p>The full version will be far less linear, packed with far more pages - with more music and images - and not necessarily in the order that I've arranged it here.</p>
             <p>This little demo exists mostly to give you a feel for the game, and the types of puzzles that can be made possible within it.</p>
             <p>Thank you for making it this far!</p>
+        </section>
+        <section>
+            <p>Try filling out Jay's character page in the Hope Chest if you haven't already!</p>
+            <p>Right now it doesn't have any use, but I plan for time to pass when character pages are completed, unlocking access to new sites.</p>
         </section>
     </section>
 </template>
